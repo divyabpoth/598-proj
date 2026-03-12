@@ -32,7 +32,7 @@ healthy_count = 0
 symptomatic_count = 0
 covid_count = 0
 
-max_per_class = 1000
+max_per_class = 614
 
 # Mel Spectrogram transform
 mel_transform = torchaudio.transforms.MelSpectrogram(
@@ -64,18 +64,21 @@ for file in os.listdir(DATASET_PATH):
 
     # class balancing
     if label == "healthy":
-        healthy_count += 1
-        if healthy_count > max_per_class:
+        if healthy_count < max_per_class:
+            healthy_count += 1
+        else:
             continue
 
     elif label == "symptomatic":
-        symptomatic_count += 1
-        if symptomatic_count > max_per_class:
+        if symptomatic_count < max_per_class:
+            symptomatic_count += 1
+        else:
             continue
 
     elif label == "COVID-19":
-        covid_count += 1
-        if covid_count > max_per_class:
+        if covid_count < max_per_class:
+            covid_count += 1
+        else:
             continue
 
     wav_file = file.replace(".json", ".wav")
@@ -256,3 +259,6 @@ print(classification_report(
     all_preds,
     target_names=le.classes_
 ))
+
+# save model to use for inference
+torch.save(model.state_dict(), "cough_classifier_v2.pth")
