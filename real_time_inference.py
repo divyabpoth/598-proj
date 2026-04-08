@@ -15,7 +15,7 @@ import torch.nn as nn
 import torchaudio
 import time
 
-from cough_classifier_v2 import BaseCNN
+from old_versions.cough_classifier_v2 import BaseCNN
 
 # device setup
 device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
