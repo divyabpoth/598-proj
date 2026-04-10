@@ -232,3 +232,4 @@ xgboost = create_model('xgboost')
 plot_model(xgboost)
 plot_model(xgboost, plot = 'confusion_matrix')
 
+save_model(xgboost, 'xgboost_model')  # saves as cough_model.pkl

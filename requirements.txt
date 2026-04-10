@@ -90,6 +90,7 @@ simplejson==3.20.2
 six==1.17.0
 sklearn-compat==0.1.5
 sktime==0.26.0
+sounddevice==0.5.5
 soundfile==0.13.1
 soxr==1.0.0
 stack-data==0.6.3
