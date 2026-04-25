@@ -1,3 +1,5 @@
+## NOTE: data preprocessing and feature extraction code is adapted from this public notebook: https://www.kaggle.com/code/andreshg/coughvid-cough-classification-pycaret-xgboost/notebook
+
 # utilities
 from math import nan
 import os
