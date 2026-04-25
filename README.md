@@ -115,6 +115,19 @@ The project uses the **CoughVID** dataset, a large-scale crowdsourced collection
 
 ---
 
+## Demo Videos
+
+Two screen-recorded demos are included at the root of the repo showing the real-time inference script in action:
+
+| File | Description |
+|------|-------------|
+| `healthy_cough_demo.MOV` | Records a healthy cough, segments it, and outputs a **healthy** prediction |
+| `covid_cough_demo.MOV` | Records a COVID-19 cough, segments it, and outputs a **COVID-19** prediction |
+
+Both demos run `real_time_inference.py` end-to-end (microphone recording, cough segmentation, feature extraction, majority-vote prediction), and show the printed result in the terminal.
+
+---
+
 ## Old Versions
 
 The `old_versions/` directory contains earlier experimental approaches:
